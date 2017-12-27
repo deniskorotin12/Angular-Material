@@ -1,0 +1,78 @@
+#content {
+    padding: 20px;
+}
+
+.header_toolbar {
+    background: #2962ff;
+    box-shadow: 0 0 10px;
+}
+
+.footer_toolbar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #2962ff;
+    height: 100px;
+}
+
+.header_button_menu {
+    position: absolute;
+    color: white;
+    margin-right: 2.2em;
+    background: transparent;
+}
+
+.header_button_menu:hover {
+    background: rgba(0, 38, 255, 0.39);
+    padding: 0;
+}
+
+.material-icons.md-18 {
+    font-size: 18px;
+}
+
+.material-icons.md-24 {
+    font-size: 24px;
+}
+
+.material-icons.md-36 {
+    font-size: 36px;
+}
+
+.material-icons.md-48 {
+    font-size: 48px;
+}
+
+.sidenav-container {
+    box-shadow: 0 0 10px;
+    margin-right: 12px;
+    height: 100%;
+}
+
+mat-sidenav-container {
+    position: fixed;
+    bottom: 0;
+    height: 100vh;
+}
+
+.menu-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-list a {
+    margin-top: 1em;
+}
+
+.footer-powered {
+    text-align: center;
+}
+
+.footer_container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
