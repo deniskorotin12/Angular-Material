@@ -1,3 +1,16 @@
-<p>
-  registration works!
-</p>
+<div>
+    <form #myForm="ngForm" novalidate>
+      <label for="fname">Имя</label>
+      <input type="text" [(ngModel)]="fname" id="fname" name="firstname" placeholder="Имя" required/>
+  
+      <label for="lname">Фамилия</label>
+      <input type="text" [(ngModel)]="lname" id="lname" name="lastname" placeholder="Фамилия" required/>
+  
+      <label for="phone">Телефон</label>
+      <input type="text"  [(ngModel)]="phone" id="phone" name="phone" placeholder="(050)121-34-57" required/>
+    
+      <button type="submit" [disabled]="myForm.invalid" (click)='addContact()' routerLink='/home' routerActiveLink='active' >
+        Добавить
+      </button>
+    </form>
+  </div>
