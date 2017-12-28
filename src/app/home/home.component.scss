@@ -30,3 +30,16 @@
     background-color: rgba(115, 107, 151, 0.301);
     cursor: pointer;
   }
+  .mat-row:nth-child(2n){
+    background: rgba(231, 231, 231, 0.486);
+  }
+  .mat-row:nth-child(2n):hover{
+    background-color: rgba(115, 107, 151, 0.301);
+  }
+  .mat-raised-button{
+    margin: 1em;
+  }
+  .mat-raised-button:hover{
+    background: rgba(120, 121, 204, 0.431);
+    transition: background 0.5s ease-in-out 0s ;
+  }

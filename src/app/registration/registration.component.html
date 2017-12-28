@@ -1,5 +1,5 @@
 
-<div>
+<div class='registration-container'>
   <form #myForm="ngForm" novalidate>
     <label for="fname">Имя</label>
     <input type="text" [(ngModel)]="fname" id="fname" name="firstname" placeholder="Имя" required/>
@@ -10,10 +10,10 @@
     <label for="phone">Телефон</label>
     <input type="text"[(ngModel)]="phone" id="phone" name="phone" placeholder="0123456789" pattern="[0-9]{10}" maxlength="10" minlength="10" required/>
     <div class="buttonsContainer">
-      <button type="submit" routerLink='/phonebook' (click)="goBack()" routerActiveLink='active'>
+      <button mat-raised-button type="submit" routerLink='/phonebook' (click)="goBack()" routerActiveLink='active'>
         Назад
       </button>
-      <button type="submit" [disabled]="myForm.invalid" (click)='addContact()' routerLink='/phonebook' routerActiveLink='active'>
+      <button mat-raised-button type="submit" [disabled]="myForm.invalid" (click)='addContact()' routerLink='/phonebook' routerActiveLink='active'>
         Добавить
       </button>
     </div>

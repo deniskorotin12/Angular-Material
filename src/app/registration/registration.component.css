@@ -2,6 +2,7 @@ input[type=text], select {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
+    margin-bottom: 1.2em;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -20,7 +21,7 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-    background-color: #3143aa;
+    /* background-color: #3143aa; */
 }
 
 div {
@@ -30,6 +31,7 @@ div {
     margin: 0 auto;
     max-width: 600px;
     margin-top: 2em;
+    background: transparent;    
 }
 
 input.ng-touched.ng-invalid {background:  rgba(255, 0, 0, 0.575);}
@@ -45,19 +47,22 @@ button[disabled]:hover{
 button{
     font-weight: 700;
     width: 14em;
-    color: white;
+    color: rgb(0, 0, 0);
     text-decoration: none;
     padding: .8em 1em calc(.8em + 3px);
     border-radius: 3px;
-    background: rgb(78, 90, 255);
-    box-shadow: 0 -3px rgb(65, 94, 223) inset;
+    /* background: rgb(78, 90, 255); */
+    /* box-shadow: 0 -3px rgb(65, 94, 223) inset; */
+    box-shadow: none;
     transition: 0.2s;
     cursor: pointer;
   } 
-button:hover { background: rgb(0, 26, 255); }
+button:hover { 
+    /* background: rgb(0, 26, 255);  */
+}
 button:active {
-    background: rgb(35, 33, 147);
-    box-shadow: 0 3px rgb(33, 44, 147) inset;
+    /* background: rgb(35, 33, 147); */
+    /* box-shadow: 0 3px rgb(33, 44, 147) inset; */
   }
 
 .buttonsContainer{
@@ -65,4 +70,8 @@ button:active {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+}
+.registration-container{
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+     background: rgba(4, 0, 255, 0.356);
 }

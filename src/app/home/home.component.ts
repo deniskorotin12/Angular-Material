@@ -11,13 +11,12 @@ import { MatSort, MatPaginator } from '@angular/material';
   encapsulation: ViewEncapsulation.None
 })
 export class HomeComponent implements OnInit {
-
   
   focusPerson(personId){
     window.location.replace(window.location.href+'/:'+personId);
   }
 
-  displayedColumns = ['name', 'surname', 'phone'];
+  displayedColumns = ['id', 'name', 'surname', 'phone'];
   dataSource = new MatTableDataSource<Table>(JSON.parse(localStorage.getItem('contacts')));
   inputTextContent: string;
 
@@ -40,6 +39,7 @@ export class HomeComponent implements OnInit {
     document.getElementById('typeOfPage').innerText = 'Добавление контакта';
   }
   ngOnInit() {}
+
 }
 
 export interface Table{

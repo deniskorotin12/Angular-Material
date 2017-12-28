@@ -1,0 +1,26 @@
+section{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.material-icons.size-290{
+    font-size: 290px;
+    margin-right: 1em;
+}
+mat-form-field{
+    width: 24em;
+    margin-bottom: 2em;
+}
+.buttons-container{
+    display: flex;
+    justify-content: space-around;
+}
+button{
+    width: 11em;
+}
+mat-card{
+    height: 60%;
+}

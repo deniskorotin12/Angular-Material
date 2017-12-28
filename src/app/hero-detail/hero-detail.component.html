@@ -1,3 +1,29 @@
-<p>
-  hero-detail works!
-</p>
+<mat-card>
+<section>
+  <div class="avatar">
+    <label title="Змінити фото">
+      <i class="material-icons size-290">account_circle</i>
+    </label>
+
+  </div>
+  <div class="info-block">
+    <form class="сontact-form">
+      <mat-form-field class="contact-full-width">
+        <input matInput placeholder="Имя">
+      </mat-form-field>
+      <br>
+      <mat-form-field class="contact-full-width">
+        <input matInput placeholder="Фамилия">
+      </mat-form-field>
+      <br>
+      <mat-form-field class="contact-full-width">
+        <input matInput placeholder="Телефон">
+      </mat-form-field>
+      <div class="buttons-container">
+        <button mat-raised-button routerLink="/phonebook">Назад</button>
+        <button mat-raised-button>Сохранить</button>
+      </div>
+    </form>
+  </div>
+</section>
+</mat-card> 
