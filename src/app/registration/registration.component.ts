@@ -10,8 +10,11 @@ export class RegistrationComponent implements OnInit {
 
   fname: string;
   lname: string;
-  phone: string = '+380';
+  phone: string;
 
+  goBack(){
+    document.getElementById('typeOfPage').innerText = 'Телефонний справочник';
+  }
   addContact() {
     const lGetStorage = JSON.parse(localStorage.getItem('contacts'));
     if (!lGetStorage) {

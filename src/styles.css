@@ -5,7 +5,56 @@
     padding: 0;
     margin: 0;
 }
-
 body {
-    background-color: rgb(189, 189, 189);
+    background-color: rgb(255, 255, 255);
+}
+@keyframes lds-dual-ring {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes lds-dual-ring {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.lds-dual-ring {
+  position: relative;
+}
+.lds-dual-ring div {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  top: 20px;
+  left: 20px;
+  border-radius: 50%;
+  border: 8px solid #000;
+  border-color: #1614d6 transparent #1614d6 transparent;
+  -webkit-animation: lds-dual-ring 1s linear infinite;
+  animation: lds-dual-ring 1s linear infinite;
+}
+.lds-dual-ring {
+  width: 93px !important;
+  height: 93px !important;
+  -webkit-transform: translate(-46.5px, -46.5px) scale(0.465) translate(46.5px, 46.5px);
+  transform: translate(-46.5px, -46.5px) scale(0.465) translate(46.5px, 46.5px);
+}
+
+.lds-dual-ring{
+  position: absolute;
+  top: 35%;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin: 0 auto;
 }

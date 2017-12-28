@@ -22,12 +22,17 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { NotfoundpageComponent } from './notfoundpage/notfoundpage.component';
+import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 
 const appRoutes: Routes =[
   { path: 'contacts', component: ContactsComponent},
   { path: 'phonebook', component: HomeComponent},
+  { path: 'phonebook/:id', component: HeroDetailComponent  },
   { path: 'login', component: LoginComponent },
-  { path: 'registration', component: RegistrationComponent }
+  { path: 'registration', component: RegistrationComponent },
+  { path: '', redirectTo: '/phonebook', pathMatch: 'full'},
+  { path: '**', component: NotfoundpageComponent }
 ];
 
 
@@ -37,11 +42,13 @@ const appRoutes: Routes =[
     ContactsComponent,
     HomeComponent,
     LoginComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    NotfoundpageComponent,
+    HeroDetailComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes, { enableTracing: true }),
     BrowserAnimationsModule,
     FormsModule,
     HttpModule,

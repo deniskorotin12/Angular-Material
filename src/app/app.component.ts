@@ -1,4 +1,4 @@
-import {ChangeDetectorRef, Component, ViewEncapsulation} from '@angular/core';
+import {ChangeDetectorRef, Component, ViewEncapsulation, Input} from '@angular/core';
 import { MatDialog } from '@angular/material';
 import {FormControl} from '@angular/forms'; 
 
@@ -11,7 +11,8 @@ import {FormControl} from '@angular/forms';
   preserveWhitespaces: false,
 })
 export class AppComponent {
-  
+  @Input() show: boolean = true;
+  @Input() diameter:number = 25;
   constructor() {
   }
 

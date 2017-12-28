@@ -19,10 +19,14 @@
   
   .mat-table {
     overflow: auto;
-    max-height: 500px;
+    max-height: 800px;
   }
   .header-form-container{
       display: flex;
       flex-direction: row;
       flex-wrap: nowrap;
+  }
+  .mat-row:hover{
+    background-color: rgba(115, 107, 151, 0.301);
+    cursor: pointer;
   }
