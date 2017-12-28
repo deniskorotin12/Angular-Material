@@ -12,8 +12,6 @@ import {FormControl} from '@angular/forms';
 })
 export class AppComponent {
   
-  fillerNav = Array(10).fill(0).map((_, i) => `Nav Item ${i + 1}`);
-
   constructor() {
   }
 

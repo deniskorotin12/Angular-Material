@@ -25,7 +25,7 @@ import { RegistrationComponent } from './registration/registration.component';
 
 const appRoutes: Routes =[
   { path: 'contacts', component: ContactsComponent},
-  { path: 'home', component: HomeComponent},
+  { path: 'phonebook', component: HomeComponent},
   { path: 'login', component: LoginComponent },
   { path: 'registration', component: RegistrationComponent }
 ];

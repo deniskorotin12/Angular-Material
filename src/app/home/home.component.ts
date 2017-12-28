@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit {
     filterValue = filterValue.trim();
     filterValue = filterValue.toLowerCase();
     this.dataSource.filter = filterValue;
+    
   }
 
   ngOnInit() {}
@@ -29,7 +30,7 @@ export interface Table{
   surname: string;
   phone: string;
 }
-export const PRODUCT_ELEMENTS: Table[] = [
+export let PRODUCT_ELEMENTS: Table[] = [
   // {id: 1, name: "Denys", surname: "Korotin", phone: "+380955587919"},
   // {id: 2, name: "Arsen", surname: "Tverdohleb", phone: "+380155587919"},
   // {id: 3, name: "Yulia", surname: "Tverdohleb", phone: "+380255587919"}

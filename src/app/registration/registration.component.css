@@ -32,22 +32,37 @@ div {
     margin-top: 2em;
 }
 
-input.ng-touched.ng-invalid {border:solid red 1px;}
-input.ng-touched.ng-valid {border:solid green 1px;}
-
+input.ng-touched.ng-invalid {background:  rgba(255, 0, 0, 0.575);}
+input.ng-touched.ng-valid {background: #00ff55c0}
+button[disabled]{
+    background: gray;
+    box-shadow: none;
+}
+button[disabled]:hover{
+    background: gray;
+    box-shadow: none;
+}
 button{
     font-weight: 700;
+    width: 14em;
     color: white;
     text-decoration: none;
     padding: .8em 1em calc(.8em + 3px);
     border-radius: 3px;
-    background: rgb(64,199,129);
-    box-shadow: 0 -3px rgb(53,167,110) inset;
+    background: rgb(78, 90, 255);
+    box-shadow: 0 -3px rgb(65, 94, 223) inset;
     transition: 0.2s;
     cursor: pointer;
   } 
-button:hover { background: rgb(53, 167, 110); }
+button:hover { background: rgb(0, 26, 255); }
 button:active {
     background: rgb(33,147,90);
     box-shadow: 0 3px rgb(33,147,90) inset;
   }
+
+.buttonsContainer{
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
