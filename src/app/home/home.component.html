@@ -1,31 +1,38 @@
-
 <div class="example-container mat-elevation-z8">
   <div class="example-header">
     <div class="header-form-container">
       <mat-form-field>
         <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Поиск">
       </mat-form-field>
-      <button mat-raised-button routerLink="/registration" (click)="getHeader()" routerLinkActive="active" >Добавить</button>
+      <button mat-raised-button routerLink="/registration" (click)="getHeader()" routerLinkActive="active">Добавить</button>
     </div>
   </div>
   <mat-table #table [dataSource]="dataSource" matSort>
-      <ng-container matColumnDef="id">
-          <mat-header-cell *matHeaderCellDef mat-sort-header> № </mat-header-cell>
-           <mat-cell (click)="focusPerson(element.id)" *matCellDef="let element"> {{element.id}} </mat-cell>
-        </ng-container>
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> № </mat-header-cell>
+      <mat-cell class='cellWithContact' *matCellDef="let element">
+          <button (click)="focusPerson(element.id)" routerLink="/phonebook" routerLinkActive="active" class="deleteButton" title="Детальнее">
+            <i class="material-icons">search</i>
+          </button>
+        {{element.id}} </mat-cell>
+    </ng-container>
     <ng-container matColumnDef="name">
       <mat-header-cell *matHeaderCellDef mat-sort-header> Имя </mat-header-cell>
-      <mat-cell (click)="focusPerson(element.id)" *matCellDef="let element"> {{element.name}} </mat-cell>
+      <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
     </ng-container>
-    
+
     <ng-container matColumnDef="surname">
       <mat-header-cell *matHeaderCellDef mat-sort-header> Фамилия </mat-header-cell>
-      <mat-cell (click)="focusPerson(element.id)" *matCellDef="let element"> {{element.surname}} </mat-cell>
+      <mat-cell *matCellDef="let element"> {{element.surname}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="phone">
       <mat-header-cell *matHeaderCellDef mat-sort-header> Телефон </mat-header-cell>
-      <mat-cell (click)="focusPerson(element.id)" *matCellDef="let element"> +38{{element.phone}} </mat-cell>
+      <mat-cell class='cellWithDelete'  *matCellDef="let element"> +38{{element.phone}}
+        <button (click)="deleteContact(element.id)" routerLink="/phonebook" routerLinkActive="active" class="deleteButton" title="Удалить Контакт">
+          <i class="material-icons">delete_sweep</i>
+        </button>
+      </mat-cell>
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

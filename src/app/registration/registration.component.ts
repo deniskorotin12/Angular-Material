@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PRODUCT_ELEMENTS, Table } from '../home/home.component';
 import { debug } from 'util';
+import { createElement } from 'angular-4-data-table/node_modules/@angular/core/src/view/element';
+import { Button } from 'selenium-webdriver';
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
@@ -18,7 +20,7 @@ export class RegistrationComponent implements OnInit {
   addContact() {
     const lGetStorage = JSON.parse(localStorage.getItem('contacts'));
     if (!lGetStorage) {
-      let add = { id: PRODUCT_ELEMENTS.length + 1, name: this.fname, surname: this.lname, phone: this.phone };
+      let add = { id: PRODUCT_ELEMENTS.length + 1, name: this.fname, surname: this.lname, phone: this.phone};
       PRODUCT_ELEMENTS.push(add);
       localStorage.setItem('contacts', JSON.stringify(PRODUCT_ELEMENTS));
     } else {

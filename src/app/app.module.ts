@@ -10,28 +10,29 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Routes, RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import {
-  MatAutocompleteModule,MatButtonModule,MatButtonToggleModule,MatCardModule,MatCheckboxModule,MatChipsModule,
-  MatDatepickerModule,MatDialogModule,MatExpansionModule,MatGridListModule,MatIconModule,MatInputModule,
-  MatListModule,MatMenuModule,MatNativeDateModule,MatPaginatorModule,MatProgressBarModule,MatProgressSpinnerModule,MatRadioModule,
-  MatRippleModule,MatSelectModule,MatSidenavModule,MatSliderModule,MatSlideToggleModule,MatSnackBarModule,MatSortModule,MatTableModule,
-  MatTabsModule,MatToolbarModule,MatTooltipModule,
+  MatAutocompleteModule, MatButtonModule, MatButtonToggleModule, MatCardModule, MatCheckboxModule, MatChipsModule,
+  MatDatepickerModule, MatDialogModule, MatExpansionModule, MatGridListModule, MatIconModule, MatInputModule,
+  MatListModule, MatMenuModule, MatNativeDateModule, MatPaginatorModule, MatProgressBarModule, MatProgressSpinnerModule, MatRadioModule,
+  MatRippleModule, MatSelectModule, MatSidenavModule, MatSliderModule, MatSlideToggleModule, MatSnackBarModule, MatSortModule, MatTableModule,
+  MatTabsModule, MatToolbarModule, MatTooltipModule,
   MatStepperModule
 } from '@angular/material';
-import {CdkTableModule} from '@angular/cdk/table';
+import { CdkTableModule } from '@angular/cdk/table';
 import { ContactsComponent } from './contacts/contacts.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { NotfoundpageComponent } from './notfoundpage/notfoundpage.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
+import { DialogComponent } from './dialog/dialog.component';
 
-const appRoutes: Routes =[
-  { path: 'contacts', component: ContactsComponent},
-  { path: 'phonebook', component: HomeComponent},
-  { path: 'phonebook/:id', component: HeroDetailComponent  },
+const appRoutes: Routes = [
+  { path: 'contacts', component: ContactsComponent },
+  { path: 'phonebook', component: HomeComponent },
+  { path: 'phonebook/:id', component: HeroDetailComponent },
   { path: 'login', component: LoginComponent },
   { path: 'registration', component: RegistrationComponent },
-  { path: '', redirectTo: '/phonebook', pathMatch: 'full'},
+  { path: '', redirectTo: '/phonebook', pathMatch: 'full' },
   { path: '**', component: NotfoundpageComponent }
 ];
 
@@ -44,7 +45,8 @@ const appRoutes: Routes =[
     LoginComponent,
     RegistrationComponent,
     NotfoundpageComponent,
-    HeroDetailComponent
+    HeroDetailComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -95,7 +97,7 @@ const appRoutes: Routes =[
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [RegistrationComponent]
+  entryComponents: [DialogComponent]
 })
 export class AppModule { }
 platformBrowserDynamic().bootstrapModule(AppModule);

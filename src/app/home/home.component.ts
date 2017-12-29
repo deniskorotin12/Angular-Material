@@ -1,9 +1,8 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from "@angular/core";
 import { FormBuilder, Validators } from "@angular/forms";
 import { DataTableResource } from 'angular-4-data-table';
-import { MatTableDataSource } from "@angular/material";
-import { MatSort, MatPaginator } from '@angular/material';
-
+import { MatTableDataSource, MatSort, MatPaginator, MatDialog } from "@angular/material";
+import { DialogComponent } from "../dialog/dialog.component";
 @Component({
   selector: "app-home",
   templateUrl: "./home.component.html",
@@ -11,9 +10,22 @@ import { MatSort, MatPaginator } from '@angular/material';
   encapsulation: ViewEncapsulation.None
 })
 export class HomeComponent implements OnInit {
-  
-  focusPerson(personId){
-    window.location.replace(window.location.href+'/:'+personId);
+  constructor(public dialog: MatDialog) {
+    this.dataSource = new MatTableDataSource(JSON.parse(localStorage.getItem('contacts')));
+  }
+  focusPerson(personId) {
+    window.location.replace(window.location.href + '/:' + personId);
+  }
+  public deleteContact(id) {
+    let dlg = this.dialog.open(DialogComponent, { data: { id: id } });
+    
+    dlg.afterClosed().subscribe(contactId => {
+       let refreshContacts = JSON.parse(localStorage.getItem('contacts'));
+       refreshContacts.splice(refreshContacts.indexOf(JSON.parse(localStorage.getItem('contacts'))[contactId].id),1);
+       console.log(refreshContacts);
+       //localStorage.setItem('contacts', refreshContacts);
+    })
+
   }
 
   displayedColumns = ['id', 'name', 'surname', 'phone'];
@@ -22,9 +34,7 @@ export class HomeComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  constructor() {
-    this.dataSource = new MatTableDataSource(JSON.parse(localStorage.getItem('contacts')));
-  }
+
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
@@ -33,19 +43,20 @@ export class HomeComponent implements OnInit {
     filterValue = filterValue.trim();
     filterValue = filterValue.toLowerCase();
     this.dataSource.filter = filterValue;
-    
+
   }
-  getHeader(){
+  getHeader() {
     document.getElementById('typeOfPage').innerText = 'Добавление контакта';
   }
-  ngOnInit() {}
+  ngOnInit() { }
 
 }
 
-export interface Table{
+console.log(this.test);
+export interface Table {
   id: number;
   name: string;
   surname: string;
   phone: string;
 }
-export let PRODUCT_ELEMENTS: Table[] = []
+export let PRODUCT_ELEMENTS: Table[] = [];

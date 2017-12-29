@@ -57,13 +57,6 @@ button{
     transition: 0.2s;
     cursor: pointer;
   } 
-button:hover { 
-    /* background: rgb(0, 26, 255);  */
-}
-button:active {
-    /* background: rgb(35, 33, 147); */
-    /* box-shadow: 0 3px rgb(33, 44, 147) inset; */
-  }
 
 .buttonsContainer{
     margin: 0;
